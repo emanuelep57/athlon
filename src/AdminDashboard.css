@@ -1,0 +1,22 @@
+.admin-dashboard {
+    display: flex;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 240px; /* Larghezza della sidebar */
+}
+
+.calendar-cell {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.calendar-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}

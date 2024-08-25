@@ -1,0 +1,366 @@
+/* General Container Styling */
+.calendar-container {
+  width: 100%;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #FAFAFA;
+  font-family: 'Roboto', sans-serif;
+  /* Avoid Calendar Being Hidden by ViewNavigation */
+  margin: 0 0 56px;
+}
+
+/* Monthly View - Enhanced Material Design Band for Each Day */
+.rbc-month-view .rbc-date-cell {
+  position: relative;
+  text-align: center;
+  padding-bottom: 16px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #0288D1;
+}
+
+.rbc-month-view .rbc-event-indicator {
+  display: block;
+  width: 90%;
+  height: 6px;
+  background-color: #03A9F4;
+  border-radius: 8px;
+  margin-top: 4px;
+  margin-left: 5%;
+}
+
+.rbc-month-view .rbc-event {
+  margin-bottom: 6px;
+  background-color: #0288D1;
+  border-radius: 4px;
+  padding: 4px;
+  color: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.rbc-month-view .rbc-event:hover {
+  background-color: #026ea0;
+}
+
+/* Weekly and Daily View - Card Style Event Representation */
+.rbc-time-view .rbc-event,
+.rbc-agenda-view .rbc-event {
+  background-color: #E3F2FD;
+  border-left: 4px solid #0288D1;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  padding: 8px;
+  margin-bottom: 6px;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.rbc-time-view .rbc-event:hover,
+.rbc-agenda-view .rbc-event:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  background-color: #BBDEFB; /* Material Design hover effect */
+}
+
+.rbc-time-view .rbc-event-content,
+.rbc-agenda-view .rbc-event-content {
+  color: #333;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Weekly and Daily View Header Cells */
+.rbc-time-view .rbc-time-header-cell {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #0288D1;
+  background-color: #F5F5F5;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.rbc-time-view .rbc-row {
+  min-height: auto;
+}
+
+/* Agenda View - Material Design Styling */
+.rbc-agenda-view .rbc-agenda-table td,
+.rbc-agenda-view .rbc-agenda-table th {
+  padding: 12px;
+  border: 1px solid #E0E0E0;
+  text-align: left;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  word-wrap: break-word;
+}
+
+.rbc-agenda-view .rbc-agenda-table th {
+  background-color: #0288D1;
+  color: white;
+  text-transform: uppercase;
+}
+
+.rbc-agenda-view .rbc-agenda-table .rbc-agenda-time-cell,
+.rbc-agenda-view .rbc-agenda-table .rbc-agenda-date-cell {
+  color: #0288D1;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 8px;
+  background-color: #F5F5F5;
+  border-radius: 4px;
+  text-align: center;
+}
+
+/* Enhanced Event Column Background in Agenda View */
+.rbc-agenda-view .rbc-event {
+  background-color: #F5F5F5; /* Same background as the date and time columns */
+  border-left: 4px solid #0288D1;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  padding: 12px;
+  margin-bottom: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  transition: box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.rbc-agenda-view .rbc-event:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #BBDEFB;
+}
+
+/* Improved Modal Styling */
+.event-details-modal {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 360px;
+  width: 90%;
+  margin: auto;
+}
+
+.event-details-modal h6 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
+
+/* Enhanced Styling for Booking Status Text */
+.MuiTypography-root.MuiTypography-body1.css-12dbn7o-MuiTypography-root {
+  font-family: 'Roboto', sans-serif; /* Apply Roboto font */
+  font-size: 0.9rem; /* Increase font size for better readability */
+  font-weight: bold; /* Make the text bold to stand out */
+  color: #0288D1; /* Use a color that is consistent with your theme */
+  text-align: center; /* Center the text to maintain uniformity */
+  display: inline-block; /* Keep the element inline while applying the styles */
+
+}
+
+
+.event-details-modal .event-info {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+
+.event-details-modal .event-info span {
+  font-weight: bold;
+  color: #0288D1;
+}
+
+/* General Calendar Date Styling */
+.rbc-header {
+  color: #0288D1;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #F5F5F5;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+.rbc-agenda-event-cell {
+  background-color: #F5F5F5;
+}
+
+.rbc-header a {
+  color: #0288D1;
+  text-decoration: none;
+}
+
+.rbc-header a:hover {
+  color: #0277BD;
+  text-decoration: underline;
+}
+
+.rbc-date-cell {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #0288D1;
+  padding: 8px;
+  text-align: center;
+}
+
+/* Remove Left Padding */
+.rbc-time-view,
+.rbc-month-view {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Background color for today */
+.rbc-day-bg.rbc-today {
+  background-color: #E1F5FE;
+}
+
+/* Custom Toolbar Date Style */
+.custom-toolbar-date {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #0288D1;
+  padding: 0 8px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Hide Event Labels */
+.rbc-event-label {
+  display: none;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+  .rbc-agenda-view .rbc-agenda-table {
+    display: block;
+    border: 0;
+  }
+
+  .rbc-agenda-view .rbc-agenda-table thead {
+    display: none;
+  }
+
+  .rbc-agenda-view .rbc-agenda-table tbody {
+    display: block;
+    width: 100%;
+  }
+
+  .rbc-agenda-view .rbc-agenda-table tr {
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid #E0E0E0;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    padding: 8px;
+    background-color: #FAFAFA; /* Background color for contrast */
+  }
+
+  .rbc-agenda-view .rbc-agenda-table td {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .rbc-agenda-view .rbc-agenda-table .rbc-agenda-time-cell,
+  .rbc-agenda-view .rbc-agenda-table .rbc-agenda-date-cell {
+    font-weight: bold;
+    color: #0288D1;
+    margin-bottom: 8px;
+    font-size: 1rem;
+  }
+
+  /* Enhanced Styling for Date Cells in Agenda View */
+  .rbc-agenda-view .rbc-agenda-table .rbc-agenda-date-cell {
+    background-color: #0288D1;  /* Set a distinct background color */
+    color: white;  /* Change text color to contrast with the background */
+    font-weight: bold;  /* Make the date text bold */
+    font-size: 1.1rem;  /* Increase font size for better visibility */
+    padding: 12px 8px;  /* Add padding for more space around the text */
+    border-radius: 8px;  /* Add rounded corners */
+    text-align: center;  /* Center-align the text */
+    border: 2px solid #0277BD;  /* Add a slightly darker border */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);  /* Add a subtle shadow for depth */
+    margin-bottom: 8px;  /* Add margin at the bottom for spacing */
+  }
+
+  /* Hover effect for the date cells to enhance interactivity */
+  .rbc-agenda-view .rbc-agenda-table .rbc-agenda-date-cell:hover {
+    background-color: #0277BD;  /* Darken the background on hover */
+    color: #FAFAFA;  /* Adjust text color on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* Enhance shadow on hover */
+  }
+
+
+  /* Enhanced Styling for Date Cells in Agenda View with Gradient and Icon */
+  .rbc-agenda-view .rbc-agenda-table .rbc-agenda-date-cell {
+    background: linear-gradient(135deg, #0288D1, #0277BD); /* Gradient background for a modern look */
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 12px 8px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #0277BD;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    margin-bottom: 8px;
+    position: relative; /* For positioning icon */
+    transition: background 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  }
+
+
+  /* Hover effect for the date cells to enhance interactivity */
+  .rbc-agenda-view .rbc-agenda-table .rbc-agenda-date-cell:hover {
+    background: linear-gradient(135deg, #0277BD, #02669C); /* Darken gradient on hover */
+    color: #FAFAFA;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02); /* Slight scaling for hover effect */
+  }
+
+  /* Hover effect for the icon */
+  .rbc-agenda-view .rbc-agenda-table .rbc-agenda-date-cell:hover::before {
+    transform: translateY(-50%) scale(1.1); /* Slight scaling of icon on hover */
+  }
+
+  /* Pulsing animation for the current date */
+  .rbc-agenda-view .rbc-agenda-table .rbc-agenda-date-cell.rbc-today {
+    animation: pulse 2s infinite;
+  }
+
+
+
+
+}
+
+
+/* Keyframes for pulsing animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 10px rgba(2, 136, 209, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(2, 136, 209, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(2, 136, 209, 0.5);
+  }
+}
+
+/* Enhanced Styling for Booking Status Box */
+.MuiBox-root.css-14wg1hr {
+  font-size: 0.8rem; /* Increase font size for better readability */
+  font-weight: bold; /* Make the text bold to stand out */
+  color: #0288D1; /* Use a color that is consistent with your theme */
+  text-align: center; /* Center the text to maintain uniformity */
+  display: inline-block; /* Keep the element inline while applying the styles */
+  margin: 5px 0; /* Add a small margin to separate it from other elements */
+}
+
