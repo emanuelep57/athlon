@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box, Typography, Grid, Card, CardContent, Button } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 
@@ -34,5 +35,20 @@ const UserBookings = ({ userBookings, handleDeleteBooking }) => (
         </Grid>
     </Box>
 );
+
+UserBookings.propTypes = {
+    userBookings: PropTypes.arrayOf(
+        PropTypes.shape({
+            booking_id: PropTypes.number.isRequired,
+            shifts: PropTypes.shape({
+                date: PropTypes.string.isRequired,
+                start_time: PropTypes.string.isRequired,
+                end_time: PropTypes.string.isRequired,
+            }).isRequired,
+            shift_id: PropTypes.number.isRequired,
+        })
+    ).isRequired,
+    handleDeleteBooking: PropTypes.func.isRequired,
+};
 
 export default UserBookings;

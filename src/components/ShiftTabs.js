@@ -1,5 +1,6 @@
 import React from 'react';
-import {Box, Tab, Tabs} from '@mui/material';
+import PropTypes from 'prop-types';
+import { Box, Tab, Tabs } from '@mui/material';
 
 function a11yProps(index) {
     return {
@@ -17,6 +18,11 @@ const ShiftTabs = ({ tabIndex, handleTabChange }) => {
             </Tabs>
         </Box>
     );
+};
+
+ShiftTabs.propTypes = {
+    tabIndex: PropTypes.number.isRequired,
+    handleTabChange: PropTypes.func.isRequired,
 };
 
 export default ShiftTabs;

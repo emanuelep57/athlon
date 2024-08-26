@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Modal, Typography } from '@mui/material';
+import { Box } from '@mui/material';
 import { Calendar, momentLocalizer, Views } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';

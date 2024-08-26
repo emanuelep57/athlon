@@ -1,5 +1,5 @@
-// src/components/AvailableShifts.js
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
     Box,
     Typography,
@@ -51,7 +51,7 @@ const AvailableShifts = ({ shifts, handleBooking }) => {
                         '&:not(:last-child)': {
                             marginBottom: theme.spacing(2),
                         },
-                        borderRadius: '0px', // Rimuoviamo l'arrotondamento
+                        borderRadius: '0px',
                     }}
                 >
                     <AccordionSummary
@@ -149,6 +149,20 @@ const AvailableShifts = ({ shifts, handleBooking }) => {
             ))}
         </Box>
     );
+};
+
+AvailableShifts.propTypes = {
+    shifts: PropTypes.arrayOf(
+        PropTypes.shape({
+            shift_id: PropTypes.number.isRequired,
+            date: PropTypes.string.isRequired,
+            start_time: PropTypes.string.isRequired,
+            end_time: PropTypes.string.isRequired,
+            max_capacity: PropTypes.number.isRequired,
+            current_capacity: PropTypes.number.isRequired,
+        })
+    ).isRequired,
+    handleBooking: PropTypes.func.isRequired,
 };
 
 export default AvailableShifts;

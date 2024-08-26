@@ -1,5 +1,5 @@
-// src/components/AuthForm.js
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container, TextField, Button, Typography, Box } from '@mui/material';
 
 const AuthForm = ({ title, fields, handleSubmit }) => {
@@ -51,6 +51,18 @@ const AuthForm = ({ title, fields, handleSubmit }) => {
             </Box>
         </Container>
     );
+};
+
+AuthForm.propTypes = {
+    title: PropTypes.string.isRequired,
+    fields: PropTypes.arrayOf(
+        PropTypes.shape({
+            label: PropTypes.string.isRequired,
+            type: PropTypes.string.isRequired,
+            onChange: PropTypes.func.isRequired,
+        })
+    ).isRequired,
+    handleSubmit: PropTypes.func.isRequired,
 };
 
 export default AuthForm;

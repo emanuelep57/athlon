@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box, Typography } from '@mui/material';
 
 const TabPanel = ({ children, value, index, ...other }) => {
@@ -12,12 +13,17 @@ const TabPanel = ({ children, value, index, ...other }) => {
         >
             {value === index && (
                 <Box sx={{ p: 3 }}>
-                    {/* Assicuriamoci che Typography usi un tag div */}
                     <Typography component="div">{children}</Typography>
                 </Box>
             )}
         </div>
     );
+};
+
+TabPanel.propTypes = {
+    children: PropTypes.node,
+    value: PropTypes.any.isRequired,
+    index: PropTypes.any.isRequired,
 };
 
 export default TabPanel;

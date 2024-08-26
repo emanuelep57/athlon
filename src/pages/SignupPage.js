@@ -1,7 +1,7 @@
 // src/pages/SignupPage.js
 import React from 'react';
 import SignupForm from '../components/SignupForm';
-import { Container, Typography, Box, Paper } from '@mui/material';
+import { Typography, Box, Paper } from '@mui/material';
 
 const SignupPage = () => {
     return (

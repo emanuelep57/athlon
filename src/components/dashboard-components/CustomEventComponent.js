@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box, Typography, LinearProgress } from '@mui/material';
 
 const CustomEventComponent = ({ event, view }) => {
@@ -25,7 +26,6 @@ const CustomEventComponent = ({ event, view }) => {
 
     return (
         <Box sx={containerStyles}>
-            {/* Week View: Properly sized and aligned */}
             {isWeekView && (
                 <Box sx={{ width: '100%', display: 'flex', flexDirection: 'column', gap: '2px' }}>
                     <Typography sx={{ fontSize: '0.75rem', color: '#333', marginBottom: '4px' }}>
@@ -44,7 +44,6 @@ const CustomEventComponent = ({ event, view }) => {
                 </Box>
             )}
 
-            {/* Day View */}
             {isDayView && (
                 <>
                     <Box sx={{ textAlign: 'center', fontSize: '0.75rem', color: '#0288D1', fontWeight: 'bold' }}>
@@ -64,7 +63,6 @@ const CustomEventComponent = ({ event, view }) => {
                 </>
             )}
 
-            {/* Agenda View */}
             {isAgendaView && (
                 <>
                     <Typography sx={{ textAlign: 'center', fontSize: '0.75rem', color: '#0288D1', fontWeight: 'bold' }}>
@@ -88,6 +86,15 @@ const CustomEventComponent = ({ event, view }) => {
             )}
         </Box>
     );
+};
+
+CustomEventComponent.propTypes = {
+    event: PropTypes.shape({
+        current_capacity: PropTypes.number.isRequired,
+        max_capacity: PropTypes.number.isRequired,
+        title: PropTypes.string,
+    }).isRequired,
+    view: PropTypes.string.isRequired,
 };
 
 export default CustomEventComponent;

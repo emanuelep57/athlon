@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import { BottomNavigation, BottomNavigationAction } from '@mui/material';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ViewWeekIcon from '@mui/icons-material/ViewWeek';
@@ -26,5 +28,10 @@ const ViewNavigation = ({ currentView, handleViewChange }) => (
         <BottomNavigationAction label="Agenda" value="agenda" icon={<ViewAgendaIcon sx={{ fontSize: '2rem' }} />} />
     </BottomNavigation>
 );
+
+ViewNavigation.propTypes = {
+    currentView: PropTypes.string.isRequired,
+    handleViewChange: PropTypes.func.isRequired,
+};
 
 export default ViewNavigation;

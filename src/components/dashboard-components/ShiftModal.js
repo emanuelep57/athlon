@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { Box, Typography, IconButton, Modal, Button, TextField, List, ListItem, ListItemText, ListItemSecondaryAction } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
 import CloseIcon from '@mui/icons-material/Close';
@@ -112,11 +113,9 @@ const ShiftModal = ({ isModalOpen, handleCloseModal, selectedShift, fetchShiftsW
                             sx={{ mb: 2 }}
                         />
 
-                        {/* Render the bookings list */}
                         <List sx={{ mb: 2 }}>
                             {bookings.map((booking) => (
                                 <ListItem key={booking.booking_id}>
-                                    {/* Access first_name and last_name directly from booking */}
                                     <ListItemText
                                         primary={`${booking.first_name} ${booking.last_name}`}
                                     />
@@ -159,6 +158,20 @@ const ShiftModal = ({ isModalOpen, handleCloseModal, selectedShift, fetchShiftsW
             </Box>
         </Modal>
     );
+};
+
+ShiftModal.propTypes = {
+    isModalOpen: PropTypes.bool.isRequired,
+    handleCloseModal: PropTypes.func.isRequired,
+    selectedShift: PropTypes.shape({
+        shift_id: PropTypes.number.isRequired,
+        title: PropTypes.string,
+        start: PropTypes.instanceOf(Date).isRequired,
+        end: PropTypes.instanceOf(Date).isRequired,
+        current_capacity: PropTypes.number.isRequired,
+        max_capacity: PropTypes.number.isRequired,
+    }),
+    fetchShiftsWithBookings: PropTypes.func.isRequired,
 };
 
 export default ShiftModal;

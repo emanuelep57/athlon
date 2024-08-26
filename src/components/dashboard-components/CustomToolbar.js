@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Box, Typography, IconButton } from '@mui/material';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
@@ -53,6 +54,12 @@ const CustomToolbar = ({ currentDate, handleNavigate, currentView }) => {
             </Box>
         </Box>
     );
+};
+
+CustomToolbar.propTypes = {
+    currentDate: PropTypes.instanceOf(Date).isRequired,
+    handleNavigate: PropTypes.func.isRequired,
+    currentView: PropTypes.string.isRequired,
 };
 
 export default CustomToolbar;
