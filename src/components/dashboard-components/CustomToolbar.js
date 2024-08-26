@@ -12,10 +12,12 @@ const CustomToolbar = ({ currentDate, handleNavigate, currentView }) => {
             case 'month':
                 return moment(currentDate).format('MMMM YYYY');
             case 'week':
-            case 'agenda':
+            case 'agenda': {
+                // Added block scope with curly braces
                 const startOfWeek = moment(currentDate).startOf('week');
                 const endOfWeek = moment(currentDate).endOf('week');
                 return `${startOfWeek.format('DD MMM')} - ${endOfWeek.format('DD MMM YYYY')}`;
+            }
             case 'day':
                 return moment(currentDate).format('DD MMMM YYYY');
             default:
