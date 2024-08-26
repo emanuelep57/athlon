@@ -7,13 +7,17 @@ module.exports = {
         'eslint:recommended',
         'plugin:react/recommended',
     ],
-    parser: "babel-eslint", // Aggiunto il parser babel-eslint
+    parser: "@babel/eslint-parser", // Sostituito babel-eslint con @babel/eslint-parser
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
         },
         ecmaVersion: 12,
         sourceType: 'module',
+        requireConfigFile: false, // Non richiede un file di configurazione Babel
+        babelOptions: {
+            presets: ["@babel/preset-react"], // Specifica il preset di Babel
+        },
     },
     plugins: [
         'react',
